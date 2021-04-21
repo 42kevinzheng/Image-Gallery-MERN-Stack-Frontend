@@ -1,0 +1,93 @@
+.img_loading{
+	position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+
+
+
+.tags {
+	text-align: center;
+	padding: 20px 0px;
+	background-color: rgb(43, 92, 226);
+}
+
+body{
+	background-color: rgb(252, 254, 252);
+}
+
+
+.tag {
+	outline: none;
+	border: none;
+	color: #eee;
+	margin: 0px 10px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.active {
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+}
+.container {
+	width: 80%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); 
+	gap: 10px;
+}
+
+
+.image-card {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+}
+
+
+.image:hover {
+    padding: 5px;
+    /* opacity: .5; */
+    transition: 0.9s;
+    transform: scale(
+	1.00
+    ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  .wp-caption {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	}
+	.wp-caption img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		}
+
+	.wp-caption-text {
+		opacity: 0.59;
+		position: absolute;
+		width: 100%;
+		color: #fff;
+		left: 0;
+		bottom: 0;
+		padding: 0.75em 1em;
+		font-weight: 700;
+		z-index: 2;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		background-color: rgba(0,0,0,.7);
+		-webkit-transition: opacity .3s ease-in-out;
+		transition: opacity .3s ease-in-out;
+		}
