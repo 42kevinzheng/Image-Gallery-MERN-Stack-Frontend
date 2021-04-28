@@ -5,7 +5,8 @@ import FileBase from 'react-file-base64';
 import useStyles from './styles';
 import {updatePhoto } from '../../actions/users.js'
 import { Link } from 'react-router-dom';
-import {getUsers } from '../../actions/users.js'
+import Pixels from './Pixels.js';
+import './style.css';
 
 const ShowPhotos = (props) => {
   const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
@@ -13,26 +14,24 @@ const ShowPhotos = (props) => {
   const dispatch = useDispatch();
   const classes = useStyles();
 
-  useEffect(()=>{
-    dispatch(getUsers());
-  },[dispatch]);
-
   useEffect(() => {
     if (postsx) setPostData(postsx);
   }, [postsx]);
 
 const clear = () => {
+  props.location.id=0;
   setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
 };
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-    dispatch(updatePhoto(props.location.id, postData));
-    clear();
+  dispatch(updatePhoto(props.location.id, postData));
+  clear();
 };
 
+
     return (
-<>
+    <div>
 			<nav className="tags">
 				<Link to="/" className="btn btn-outline-warning float-right">
             <button>Home</button>
@@ -51,7 +50,11 @@ const handleSubmit = async (e) => {
           <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
         </form>
       </Paper>
-      </>
+      <img src={postData.selectedFile} alt='44'/>
+
+      <Pixels image={postData.selectedFile}/>
+
+    </div>
     );
   };
 

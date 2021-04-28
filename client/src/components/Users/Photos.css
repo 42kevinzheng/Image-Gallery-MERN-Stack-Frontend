@@ -16,7 +16,7 @@
 }
 
 body{
-	background-color: rgb(252, 254, 252);
+	background-color: pink;
 }
 
 
@@ -37,7 +37,9 @@ body{
 	width: 80%;
 	margin: auto;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr); 
+	/* grid-template-columns: repeat(4, 1fr);  */
+	grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+
 	gap: 10px;
 }
 

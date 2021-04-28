@@ -12,7 +12,7 @@ const Photos = () => {
 		setLoading(true);
 		setTimeout(()=>{
 			setLoading(false)
-		}, 8000)
+		}, 4000)
 	},[])
 
 	const postss = useSelector((state)=>state.users);
@@ -20,7 +20,7 @@ const Photos = () => {
 	return (
 		<div>
 			{ 
-			loading ?  <img className='img_loading' src='https://media.tenor.com/images/39d6060576a516f1dd437eafccafbdb1/tenor.gif' alt='alt'/>
+			!postss.length ?  <img className='img_loading' src='https://media.tenor.com/images/39d6060576a516f1dd437eafccafbdb1/tenor.gif' alt='alt'/>
 
 			:
 
