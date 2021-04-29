@@ -5,7 +5,7 @@ import FileBase from 'react-file-base64';
 import useStyles from './styles';
 import {updatePhoto } from '../../actions/users.js'
 import { Link } from 'react-router-dom';
-import Pixels from './Pixels.js';
+
 import './style.css';
 
 const ShowPhotos = (props) => {
@@ -52,7 +52,7 @@ const handleSubmit = async (e) => {
       </Paper>
       <img src={postData.selectedFile} alt='44'/>
 
-      <Pixels image={postData.selectedFile}/>
+  
 
     </div>
     );

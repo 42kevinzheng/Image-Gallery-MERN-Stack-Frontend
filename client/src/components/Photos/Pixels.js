@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Pixels = (props) => {
 
 const myImage = new Image();
-myImage.src = props.image;
+myImage.src = props.location.image;
 myImage.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
@@ -15,7 +16,6 @@ myImage.addEventListener('load', function(){
     const pixels = ctx.getImageData(0,0,canvas.width,canvas.height);
     ctx.clearRect(0,0,canvas.width,canvas.height);
     
-
     let particlesArray = [];
     const numberOfParticles =5000;
 
@@ -27,7 +27,7 @@ myImage.addEventListener('load', function(){
             const green = pixels.data[(y* 4 *pixels.width) + (x*4+1)];
             const blue = pixels.data[(y* 4 *pixels.width) + (x*4+2)];
             const brightness = calculateRelativeBrightness(red,green,blue);
-            let cellBrightness ;
+            let cellBrightness;
             const cell = [
                 cellBrightness = brightness,
             ];
@@ -99,6 +99,10 @@ myImage.addEventListener('load', function(){
     return (
         <div>
         <canvas id='canvas1'/> 
+        <Link to='/'>
+            <button>Home</button>
+        </Link>
+
         </div>
     );
 };

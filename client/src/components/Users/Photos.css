@@ -74,7 +74,8 @@ body{
 	.wp-caption img {
 		display: block;
 		max-width: 100%;
-		height: auto;
+		height: 500px;
+		object-fit: cover;
 		}
 
 	.wp-caption-text {
