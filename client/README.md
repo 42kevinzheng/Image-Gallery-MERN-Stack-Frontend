@@ -4,9 +4,9 @@ update description for the image, and delete image from the gallery.
 
 
 ### `npm install && npm start`
-npm install to install all the dependencies and npm start to run the application.
+'npm install' to install all the dependencies and 'npm start' to run the application.
 
-npm install and npm start the frontend and backend separately. 
+npm install and npm start the 'frontend' and 'backend' separately. 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
