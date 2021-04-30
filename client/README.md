@@ -15,5 +15,5 @@ The Backend of this project is this link:
 https://github.com/42kevinzheng/Image-Gallery-MERN-Stack-Backend
 
 
-The live web version: https://image-galler-mern-stack-crud.netlify.app/
+The live web version: https://image-gallery-crud.netlify.app/
 
