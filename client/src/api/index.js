@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/photos';;
+const url = 'https://crud-mern-image.herokuapp.com/photos';;
 
 export const fetchPhotos = () => axios.get(url);
 export const createPhoto = (newPhoto) =>axios.post(url, newPhoto);

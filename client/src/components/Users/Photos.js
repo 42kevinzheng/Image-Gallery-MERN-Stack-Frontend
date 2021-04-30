@@ -38,8 +38,10 @@ const Photos = () => {
 						<a href={`/images/${posts.selectedFile}`}>
 							<figure className="wp-caption">
 							<img  src={posts.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={posts._id}/> 
-							<figcaption className="wp-caption-text"> 
-							</figcaption>
+							<figcaption class="wp-caption-text"> 
+									{posts._id}<br/>
+									{posts.creator || "Default"}
+								</figcaption>
 							</figure>
 						</a>
 						<Link to= {{ pathname:`/edit/${posts._id}`, id:posts._id,}} >
