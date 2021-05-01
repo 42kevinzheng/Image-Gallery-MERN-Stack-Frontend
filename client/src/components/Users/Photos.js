@@ -4,9 +4,13 @@ import { SRLWrapper } from 'simple-react-lightbox';
 import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
 import {deletePhoto} from '../../actions/users.js';
+import { ColorPicker,useColor } from "react-color-palette";
+import "react-color-palette/lib/css/styles.css";
 
 const Photos = () => {
 	const [loading, setLoading] = useState(false);
+	const [color, setColor] = useColor("hex", "#121212");
+
 	const dispatch = useDispatch();
 	useEffect(()=>{
 		setLoading(true);
@@ -24,7 +28,14 @@ const Photos = () => {
 
 			:
 
-			<div>
+			<div style={{ backgroundColor:`${color.hex}`}}>		
+<ColorPicker
+        width={456}
+        height={228}
+        color={color}
+        onChange={setColor}
+
+      />
 			<div className="tags">
 			<Link to="/create" >
 			<button>Create</button>
@@ -39,8 +50,8 @@ const Photos = () => {
 							<figure className="wp-caption">
 							<img  src={posts.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={posts._id}/> 
 							<figcaption class="wp-caption-text"> 
-									{posts._id}<br/>
-									{posts.creator || "Default"}
+									{`ID: ${posts._id}`}<br/>
+									{posts.creator || "[Default Creater]"}
 								</figcaption>
 							</figure>
 						</a>
@@ -50,7 +61,6 @@ const Photos = () => {
 						<Link to ={{pathname:'/pixels' ,image: posts.selectedFile}}>
 							<button>Pixel</button>
 						</Link>
-
 						<button onClick={()=>dispatch(deletePhoto(posts._id))}>Delete</button> 
 					</div>
 				))}
